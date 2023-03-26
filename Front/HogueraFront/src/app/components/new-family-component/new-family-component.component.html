@@ -1,0 +1,15 @@
+<br>
+<div class="card" style="width: 40rem;">
+    <div class="card-body">
+        <form novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <h1 class="row">Crear nueva familia</h1>
+            <hr>
+            <div class="row">
+                <label class="form-label">Nombre de la familia</label>
+                <input type="text" class="form-control" id="nombreFamilia" name="nombreFamilia" ngModel>
+            </div>
+            <br>
+            <button class="btn btn-primary" style="width: 5rem;" id="submit">Crear</button>
+        </form>
+    </div>
+</div>

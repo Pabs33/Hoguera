@@ -1,0 +1,96 @@
+<br>
+<h1 style="text-align: center; margin-bottom: 1rem;">Resumen de una familia</h1>
+<div class="card" style="width: 65rem;">
+
+    <form>
+        <h1 style="text-align: center; margin-bottom: 1rem;">Seleccionar datos</h1>
+        <h2 style="text-align: center;">Familia</h2>
+        <input class="form-control" type="text" list="familyList" name="element" placeholder="Introduce una familia" [(ngModel)]="selectedFamily" (change)="onFamilyChange(selectedFamily)"
+                style="margin: 2rem; width: 61rem;">
+        <datalist id="familyList">
+            <select>
+                <option *ngFor="let element of familias" value="{{element.NombreFamilia}}">{{element.NombreFamilia}}</option>
+            </select>
+        </datalist>
+
+        <!--Codigo donde poner los dos datapickers-->
+
+        <div class="row" style="max-width: 60rem; text-align: center;">
+            <div class="col">
+                <div class="row">
+                    <h2 class="col">Fecha inicial</h2>
+                    <input #fechaDesde type="date" class="form-control col" id="decimos28" style="width: 5rem;">
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h2 class="col">Fecha final</h2>
+                    <input #fechaHasta type="date" class="form-control col" id="papeletas28" style="width: 5rem;">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;">
+            <!--Botones para pedir los datos-->
+            <button type="button" class="btn btn-primary" (click)="botonPedirResumenFamilia(fechaDesde.value, fechaHasta.value)">Ver Resumen</button>
+            <button type="button" class="btn btn-primary" (click)="botonPedirResumenGeneral(fechaDesde.value, fechaHasta.value)">Ver resumen de todas las familias</button>
+        </div>
+        <br>
+    </form>
+</div>
+<h1 style="text-align: center; margin-top: 1rem;">Resumen</h1>
+<div class="card" style="width: 65rem; margin-top: 1rem; margin-bottom: 1rem;">
+    <!--Resumen detallado mejor-->
+    <table class="table" style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Decimos28</th>
+            <th scope="col">Decimos64</th>
+            <th scope="col">Papeletas28</th>
+            <th scope="col">Papeletas64</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let resumen of resumenCompleto">
+          <tr>
+            <th>{{resumen.FechaSorteo}}</th>
+            <td>{{resumen.Decimos28}}</td>
+            <td>{{resumen.Decimos64}}</td>
+            <td>{{resumen.Papeletas28}}</td>
+            <td>{{resumen.Papeletas64}}</td>
+          </tr>
+        </tbody>
+      </table>
+    <!--Resumen total-->
+    <h1 style="text-align: center;">Total</h1>
+    <div class="row" style="max-width: 65rem; text-align: center;">
+        <div class="col">
+            <div class="row">
+                <h3 class="col">Total decimos 28</h3>
+                <h3>{{decimos28}}</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <h3 class="col">Total papeletas 28</h3>
+                <h3>{{papeletas28}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="max-width: 65rem; text-align: center;">
+        <div class="col">
+            <div class="row">
+                <h3 class="col">Total decimos 64</h3>
+                <h3>{{decimos64}}</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <h3 class="col">Total papeletas 64</h3>
+                <h3>{{papeletas64}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

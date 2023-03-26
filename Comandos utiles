@@ -1,0 +1,2 @@
+Iniciar el back y que se resetee: npx nodemon index.js
+Inicair el front: npm start

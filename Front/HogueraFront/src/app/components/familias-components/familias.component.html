@@ -1,0 +1,49 @@
+<div class="card" style="width: 40rem;">
+    <div class="card-body">
+        <div class="row">
+            <h1 class="col">{{nombre}}</h1>
+            <input class="col" type="date" #fecha>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <p class="col">Decimos del 28</p>
+                    <input [(ngModel)]="decimos28" type="number" class="form-control col" id="decimos28" style="width: 5rem;" value="{{decimos28}}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <p class="col">Papeletas del 28</p>
+                    <input [(ngModel)]="papeletas28" type="number" class="form-control col" id="papeletas28" style="width: 5rem;" value="{{papeletas28}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <p class="col">Decimos del 64</p>
+                    <input [(ngModel)]="decimos64" type="number" class="form-control col" id="decimos64" style="width: 5rem;" value="{{decimos64}}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <p class="col">Papeletas del 64</p>
+                    <input [(ngModel)]="papeletas64" type="number" class="form-control col" id="papeletas64" style="width: 5rem;" value="{{papeletas64}}">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;">
+            <div style="text-align: left;">
+                <button type="button" class="btn btn-primary" (click)="pedirDatos(fecha.value)">Pedir Datos</button>
+            </div>
+            <div style="text-align: right;">
+                <button type="button" class="btn btn-primary" (click)="subirDatos(fecha.value)">Actualizar Datos</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

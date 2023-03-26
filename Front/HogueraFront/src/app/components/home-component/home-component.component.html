@@ -1,0 +1,17 @@
+<br>
+
+<div class="row">
+    <h1>Seleciona una familia</h1>
+    <input class="form-control" type="text" list="familyList" name="element" placeholder="Introduce una familia" [(ngModel)]="selectedFamily" (change)="onFamilyChange(selectedFamily)" >
+    <datalist id="familyList">
+      <select>
+        <option *ngFor="let element of familias" value="{{element.NombreFamilia}}">{{element.NombreFamilia}}</option>
+      </select>
+    </datalist>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <familias [nombre] = "familiaSeleccionada"></familias>
+  </div>
