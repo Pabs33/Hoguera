@@ -75,29 +75,4 @@ export class ResumenComponent implements OnInit {
     }
   }
 
-  // TODO Igual es mejor separar los dos resumenes
-
-  botonPedirResumenGeneral(fechaDesde:any, fechaHasta:any){
-
-    if(fechaDesde == "" || fechaHasta == ""){
-      window.alert("Debes introducir dos fehcas para poder hacer la consulta");
-    }else{
-      let fechaDesdeFormateada = formatDate(fechaDesde, 'YYYY-MM-dd', 'en-US');
-      let fechaHastaFormateada = formatDate(fechaHasta, 'YYYY-MM-dd', 'en-US');
-
-      this.resumenCompleto = [];
-
-      this.familiasService.postResumenGeneral(fechaDesdeFormateada, fechaHastaFormateada).subscribe((respPostResumenGeneral)=>{
-        if(respPostResumenGeneral.result == 'KO'){
-          window.alert('Ha habido un error pidiendo los datos');
-        }else{
-          this.decimos28 = respPostResumenGeneral.TotalDecimos28;
-          this.decimos64 = respPostResumenGeneral.TotalDecimos64;
-          this.papeletas28 = respPostResumenGeneral.TotalPapeletas28;
-          this.papeletas64 = respPostResumenGeneral.TotalPapeletas64;
-        }
-      });
-    }
-  }
-
 }

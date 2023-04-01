@@ -8,11 +8,13 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { NewFamilyComponentComponent } from './components/new-family-component/new-family-component.component';
 import { FormsModule } from '@angular/forms';
 import { ResumenComponent } from './components/resumen-component/resumen.component';
+import { ResumenGeneralComponentComponent } from './components/resumen-general-component/resumen-general-component.component';
 
 const appRoutes:Routes =[
   {path:'', component:HomeComponentComponent},
   {path:'nuevafamilia', component:NewFamilyComponentComponent},
-  {path:'resumen', component:ResumenComponent}
+  {path:'resumen', component:ResumenComponent},
+  {path: 'resumenGeneral', component:ResumenGeneralComponentComponent}
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const appRoutes:Routes =[
     Familias,
     HomeComponentComponent,
     NewFamilyComponentComponent,
-    ResumenComponent
+    ResumenComponent,
+    ResumenGeneralComponentComponent
   ],
   imports: [
     BrowserModule,

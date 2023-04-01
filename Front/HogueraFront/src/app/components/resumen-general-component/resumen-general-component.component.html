@@ -1,0 +1,64 @@
+<br>
+<h1 style="text-align: center; margin-bottom: 1rem;">Resumen General</h1>
+<div class="card" style="width: 65rem;">
+
+    <form>
+        <h1 style="text-align: center; margin-bottom: 1rem;">Seleccionar datos</h1>
+        
+        <!--Codigo donde poner los dos datapickers-->
+
+        <div class="row" style="max-width: 60rem; text-align: center;">
+            <div class="col">
+                <div class="row">
+                    <h2 class="col">Fecha inicial</h2>
+                    <input #fechaDesde type="date" class="form-control col" id="decimos28" style="width: 5rem;">
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h2 class="col">Fecha final</h2>
+                    <input #fechaHasta type="date" class="form-control col" id="papeletas28" style="width: 5rem;">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;">
+            <!--Botones para pedir los datos-->
+            <button type="button" class="btn btn-primary" (click)="botonPedirResumenGeneral(fechaDesde.value, fechaHasta.value)">Ver resumen </button>
+        </div>
+        <br>
+    </form>
+</div>
+<h1 style="text-align: center; margin-top: 1rem;">Resumen</h1>
+    <!--Resumen total-->
+<h1 style="text-align: center;">Total</h1>
+<div class="row" style="max-width: 65rem; text-align: center;">
+    <div class="col">
+        <div class="row">
+            <h3 class="col">Total decimos 28</h3>
+            <h3>{{decimos28}}</h3>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            <h3 class="col">Total papeletas 28</h3>
+            <h3>{{papeletas28}}</h3>
+        </div>
+    </div>
+</div>
+<div class="row" style="max-width: 65rem; text-align: center;">
+    <div class="col">
+        <div class="row">
+            <h3 class="col">Total decimos 64</h3>
+            <h3>{{decimos64}}</h3>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            <h3 class="col">Total papeletas 64</h3>
+            <h3>{{papeletas64}}</h3>
+        </div>
+    </div>
+</div>
