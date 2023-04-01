@@ -31,34 +31,26 @@
         <br>
     </form>
 </div>
-<h1 style="text-align: center; margin-top: 1rem;">Resumen</h1>
+<br>
+<div class="card" style="width: 65rem;">
+    <h1 style="text-align: center; margin-top: 1rem;">Resumen</h1>
     <!--Resumen total-->
-<h1 style="text-align: center;">Total</h1>
-<div class="row" style="max-width: 65rem; text-align: center;">
-    <div class="col">
-        <div class="row">
-            <h3 class="col">Total decimos 28</h3>
-            <h3>{{decimos28}}</h3>
-        </div>
-    </div>
-    <div class="col">
-        <div class="row">
-            <h3 class="col">Total papeletas 28</h3>
-            <h3>{{papeletas28}}</h3>
-        </div>
-    </div>
-</div>
-<div class="row" style="max-width: 65rem; text-align: center;">
-    <div class="col">
-        <div class="row">
-            <h3 class="col">Total decimos 64</h3>
-            <h3>{{decimos64}}</h3>
-        </div>
-    </div>
-    <div class="col">
-        <div class="row">
-            <h3 class="col">Total papeletas 64</h3>
-            <h3>{{papeletas64}}</h3>
-        </div>
-    </div>
+    <table class="table" style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">Decimos28</th>
+            <th scope="col">Decimos64</th>
+            <th scope="col">Papeletas28</th>
+            <th scope="col">Papeletas64</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{decimos28}}</td>
+                <td>{{decimos64}}</td>
+                <td>{{papeletas28}}</td>
+                <td>{{papeletas64}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

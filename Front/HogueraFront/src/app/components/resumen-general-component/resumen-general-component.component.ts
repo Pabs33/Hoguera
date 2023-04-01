@@ -15,9 +15,6 @@ export class ResumenGeneralComponentComponent implements OnInit {
   public papeletas28:any = 0;
   public papeletas64:any = 0;
 
-  //lista de todos los datos de los sorteos
-  public resumenCompleto: Array<any> = [];
-
   constructor(private familiasService: FamiliasService) { }
 
   ngOnInit(): void {
@@ -31,8 +28,6 @@ export class ResumenGeneralComponentComponent implements OnInit {
     }else{
       let fechaDesdeFormateada = formatDate(fechaDesde, 'YYYY-MM-dd', 'en-US');
       let fechaHastaFormateada = formatDate(fechaHasta, 'YYYY-MM-dd', 'en-US');
-
-      this.resumenCompleto = [];
 
       this.familiasService.postResumenGeneral(fechaDesdeFormateada, fechaHastaFormateada).subscribe((respPostResumenGeneral)=>{
         if(respPostResumenGeneral.result == 'KO'){
