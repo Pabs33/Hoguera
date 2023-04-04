@@ -1,22 +1,23 @@
 <br>
 <h1 style="text-align: center; margin-bottom: 1rem;">Resumen General</h1>
+<br>
 <div class="card" style="width: 65rem;">
 
     <form>
-        <h1 style="text-align: center; margin-bottom: 1rem;">Seleccionar datos</h1>
+        <h2 style="text-align: center; margin-bottom: 1rem;">Seleccionar datos</h2>
         
         <!--Codigo donde poner los dos datapickers-->
 
         <div class="row" style="max-width: 60rem; text-align: center;">
             <div class="col">
                 <div class="row">
-                    <h2 class="col">Fecha inicial</h2>
+                    <h3 class="col">Fecha inicial</h3>
                     <input #fechaDesde type="date" class="form-control col" id="decimos28" style="width: 5rem;">
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <h2 class="col">Fecha final</h2>
+                    <h3 class="col">Fecha final</h3>
                     <input #fechaHasta type="date" class="form-control col" id="papeletas28" style="width: 5rem;">
                 </div>
             </div>
@@ -38,6 +39,7 @@
     <table class="table" style="text-align: center;">
         <thead>
           <tr>
+            <th></th>
             <th scope="col">Decimos28</th>
             <th scope="col">Decimos64</th>
             <th scope="col">Papeletas28</th>
@@ -46,10 +48,32 @@
         </thead>
         <tbody>
             <tr>
+                <th>Total</th>
                 <td>{{decimos28}}</td>
                 <td>{{decimos64}}</td>
                 <td>{{papeletas28}}</td>
                 <td>{{papeletas64}}</td>
+            </tr>
+            <tr>
+                <th>Precio</th>
+                <td>{{precioDecimos28}}</td>
+                <td>{{precioDecimos64}}</td>
+                <td>{{precioPapeletas28}}</td>
+                <td>{{precioPapeletas64}}</td>
+            </tr>
+            <tr>
+                <th>Beneficio</th>
+                <td>{{beneficioDecimos28}}</td>
+                <td>{{beneficioDecimos64}}</td>
+                <td>{{beneficioPapeletas28}}</td>
+                <td>{{beneficioPapeletas64}}</td>
+            </tr>
+            <tr>
+                <th>Rifa</th>
+                <td>-</td>
+                <td>-</td>
+                <td>{{rifaPapeletas28}}</td>
+                <td>{{rifaPapeletas64}}</td>
             </tr>
         </tbody>
     </table>
