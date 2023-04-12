@@ -2,9 +2,9 @@ import subprocess
 
 #Metodo encargado de matar los procesos que se generan
 def matarProcesos(nombreProceso):
-    comando = "ps -C " + nombreProceso
+    comando = "pgrep " + nombreProceso
     p = subprocess.Popen(comando, stdout=subprocess.PIPE, shell=True)
-    pid = p.communicate().split(" ")[0]
+    pid = p.communicate()
     subprocess.run("kill", pid)
 
 #script para poder ejecutar la aplicacion de la loteria de la hoguera 
@@ -31,7 +31,6 @@ while (salir != True):
     acabar = input("introduce acabar para cerrar todos los procesos")
     if(acabar == "acabar"):
         #TODO buscar que procesos arranca nodemon y angular, buscar su PID y matarlos
-        #TODO Igual es mejor usar python para este script
         #Prueba de como quedaria:
         matarProcesos("angular")
         salir = True
