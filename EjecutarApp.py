@@ -1,4 +1,12 @@
 import subprocess
+
+#Metodo encargado de matar los procesos que se generan
+def matarProcesos(nombreProceso):
+    comando = "ps -C " + nombreProceso
+    p = subprocess.Popen(comando, stdout=subprocess.PIPE, shell=True)
+    pid = p.communicate().split(" ")[0]
+    subprocess.run("kill", pid)
+
 #script para poder ejecutar la aplicacion de la loteria de la hoguera 
 
 #Ejecutar el servicio de MySQL
@@ -24,4 +32,6 @@ while (salir != True):
     if(acabar == "acabar"):
         #TODO buscar que procesos arranca nodemon y angular, buscar su PID y matarlos
         #TODO Igual es mejor usar python para este script
+        #Prueba de como quedaria:
+        matarProcesos("angular")
         salir = True
