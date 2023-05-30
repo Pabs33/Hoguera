@@ -19,9 +19,25 @@ const getConnection = () => {
     return con;
 }
 
-//Pagina principal
-app.get("/", (req, res) =>{
-    res.sendFile('index.html', {root: __dirname});
+
+//Configuramos los estaticos del servidor
+app.use('/', express.static('html'));
+
+//Enviamos el frontend
+app.get("/resumenGeneral", (req, res) =>{
+    res.sendFile('html/index.html', {root: __dirname});
+});
+app.get("/resumen", (req, res) =>{
+    res.sendFile('html/index.html', {root: __dirname});
+});
+app.get("/nuevaFamilia", (req, res) =>{
+    res.sendFile('html/index.html', {root: __dirname});
+});
+
+
+//Info de la API
+app.get("/api", (req, res) =>{
+    res.sendFile('html/indexAPI.html', {root: __dirname});
 });
 
 //Get all familias
